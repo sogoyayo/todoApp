@@ -13,9 +13,11 @@ export const UserProfile = () => {
         </div>
 
         <div className="text-white flex flex-col gap-3">
-          <h1 className="text-lg md:text-xl lg:text-2xl font-bold">Hello, John</h1>
+          <h1 className="text-shadow__black text-lg md:text-xl lg:text-2xl font-bold">
+            Hello, John
+          </h1>
 
-          <p className="text-sm md:text-lg lg:text-3xl italic font-thin">
+          <p className="text-shadow__black text-sm md:text-lg lg:text-3xl italic font-thin">
             What are your plans for today?
           </p>
         </div>

@@ -100,7 +100,7 @@ export const TodoApp: React.FC = () => {
           <div className="md:hidden">
             <UserProfile />
           </div>
-          <h2 className="px-4 md:px-0 text-white text-base md:text-2xl font-medium mb-4">
+          <h2 className="text-shadow__black px-4 md:px-0 text-white text-base md:text-2xl font-medium mb-4">
             {selectedTask ? "Edit Task" : "Add Task"}
           </h2>
         </div>
@@ -125,7 +125,7 @@ export const TodoApp: React.FC = () => {
               />
             </div>
             {taskName.length < 5 && taskName.length > 0 && (
-              <p className="text-xs text-red-500 mt-2">
+              <p className="text-xs text-[#720D0D] mt-1">
                 Task name must be at least 5 characters long.
               </p>
             )}
@@ -149,7 +149,7 @@ export const TodoApp: React.FC = () => {
           <div className="flex gap-6 mt-auto">
             <button
               onClick={handleDeleteTask}
-              className={`bg-[#AB3535] text-white px-6 py-4 rounded-lg hover:bg-[#AB3535]/95 ${
+              className={`text-shadow__black border border-[#720D0D] bg-[#AB3535] text-white px-6 py-4 rounded-lg hover:bg-[#AB3535]/95 ${
                 selectedTask ? "" : "opacity-50 cursor-not-allowed"
               }`}
               disabled={!selectedTask}
@@ -158,7 +158,7 @@ export const TodoApp: React.FC = () => {
             </button>
             <button
               onClick={handleSaveTask}
-              className={`flex-1 bg-[#3556AB] text-white px-6 py-4 rounded-lg hover:bg-[#3556AB]/95 ${
+              className={`text-shadow__black border border-[#123EB1] flex-1 bg-[#3556AB] text-white px-6 py-4 rounded-lg hover:bg-[#3556AB]/95 ${
                 taskName.length >= 3 ? "" : "opacity-50 cursor-not-allowed"
               }`}
               disabled={taskName.length < 3}

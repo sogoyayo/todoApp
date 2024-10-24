@@ -301,6 +301,11 @@
     @apply h-8
   }
 
+  .text-shadow__black {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+
 }
 
 @layer components {
