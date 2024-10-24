@@ -27,6 +27,12 @@ export const MainContent = ({
   onSaveTask,
   onDeleteTask,
 }: MainContentProps) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSaveTask();
+    }
+  };
+
   return (
     <div className="w-full text-gray-800 flex flex-col h-full">
       <div className="header-shadow flex items-center justify-between md:justify-center h-44 bg-[#3556AB]">
@@ -39,7 +45,11 @@ export const MainContent = ({
       </div>
 
       <div className="flex flex-col flex-grow py-6 px-6">
-        <TaskInput taskName={taskName} onTaskNameChange={onTaskNameChange} />
+        <TaskInput
+          taskName={taskName}
+          onTaskNameChange={onTaskNameChange}
+          onKeyPress={handleKeyPress}
+        />
 
         <div className="flex-1 md:hidden">
           <SimpleBar className="flex-grow overflow-y-auto max-h-[calc(100vh-25rem)] mt-2">

@@ -15,8 +15,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Toaster position="top-center" richColors />
-          {/* <GlobalModal />
-          <GlobalSheet /> */}
         </AppErrorBoundary>
       </BrowserRouter>
     </main>

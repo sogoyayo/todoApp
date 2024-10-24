@@ -3,9 +3,10 @@ import React from "react";
 interface TaskFormProps {
   taskName: string;
   onTaskNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export const TaskInput = ({ taskName, onTaskNameChange }: TaskFormProps) => {
+export const TaskInput = ({ taskName, onTaskNameChange, onKeyPress }: TaskFormProps) => {
   return (
     <div>
       <div className="space-y-3">
@@ -22,6 +23,7 @@ export const TaskInput = ({ taskName, onTaskNameChange }: TaskFormProps) => {
           placeholder="Type in your task"
           value={taskName}
           onChange={onTaskNameChange}
+          onKeyDown={onKeyPress}
           required
         />
       </div>
