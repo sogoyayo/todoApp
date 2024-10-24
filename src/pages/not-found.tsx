@@ -8,7 +8,6 @@ const NotFoundPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC] dark:bg-gray-50">
-      {/* sticky top header  */}
       <div className="sticky top-0 z-40 px-6 py-2 backdrop-blur-lg lg:backdrop-blur-none xl:px-10 xl:py-8">
         <div className="mx-auto flex max-w-[1520px] items-center justify-center">
           <Link to={"/"}>

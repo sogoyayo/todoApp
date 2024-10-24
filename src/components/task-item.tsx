@@ -17,10 +17,9 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
       onClick={() => onToggleComplete(task)}
     >
       <div className="flex items-center">
-        {/* Checkmark container with green background when completed */}
         <div
           className={`w-6 h-6 flex items-center justify-center rounded-full mr-4 ${
-            task.completed ? "bg-green-500" : "border-2 border-blue-900"
+            task.completed ? "bg-green-500" : "border-2 border-[#3556AB]"
           }`}
         >
           {task.completed && <Check strokeWidth={3} className="w-4 h-4 text-white" />}
@@ -28,16 +27,15 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
 
         <span
           className={`${
-            task.completed ? "line-through text-gray-400" : "text-blue-900"
+            task.completed ? "line-through text-gray-400" : "text-[#3556AB]"
           } font-medium`}
         >
           {task.name}
         </span>
       </div>
 
-      {/* Conditionally disable and style the Edit button if the task is completed */}
       <button
-        className={`text-blue-900 border border-blue-900 rounded px-4 py-2 text-sm hover:bg-blue-50 ${
+        className={`text-[#3556AB] border border-[#3556AB] rounded px-4 py-2 text-sm hover:bg-[#3556AB]/25 ${
           task.completed ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={(e) => {

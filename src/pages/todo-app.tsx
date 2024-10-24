@@ -96,7 +96,7 @@ export const TodoApp: React.FC = () => {
       </div>
 
       <div className="w-full text-gray-800 flex flex-col h-full">
-        <div className="flex items-center justify-between md:justify-center h-44 bg-blue-600">
+        <div className="flex items-center justify-between md:justify-center h-44 bg-[#3556AB]">
           <div className="md:hidden">
             <UserProfile />
           </div>
