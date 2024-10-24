@@ -19,10 +19,10 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
       <div className="flex items-center">
         <div
           className={`w-6 h-6 flex items-center justify-center rounded-full mr-4 ${
-            task.completed ? "bg-green-500" : "border-2 border-[#071D55]"
+            task.completed ? "bg-[#53DA69]" : "border-2 border-[#071D55]"
           }`}
         >
-          {task.completed && <Check strokeWidth={3} className="w-4 h-4 text-white" />}
+          {task.completed && <Check strokeWidth={3} className="w-4 h-4 text-[#399649]" />}
         </div>
 
         <span

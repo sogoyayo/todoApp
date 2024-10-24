@@ -1,10 +1,10 @@
 import SimpleBar from "@/components/simplebar";
-import { TaskItem } from "@/components/task-item";
 import { Task } from "@/pages/todo-app";
 import React from "react";
 import { UserProfile } from "./user-profile";
 import { TaskActionButtons } from "./task-buttons";
 import { TaskInput } from "./task-input";
+import { TaskList } from "./task-list";
 
 interface MainContentProps {
   selectedTask: Task | null;
@@ -43,16 +43,12 @@ export const MainContent = ({
 
         <div className="flex-1 md:hidden">
           <SimpleBar className="flex-grow overflow-y-auto max-h-[calc(100vh-25rem)] mt-2">
-            <div className="py-8 space-y-4">
-              {tasks.map((task) => (
-                <TaskItem
-                  key={task.id}
-                  task={task}
-                  onToggleComplete={onToggleComplete}
-                  onEditTask={onEditTask}
-                />
-              ))}
-            </div>
+            <TaskList
+              tasks={tasks}
+              onToggleComplete={onToggleComplete}
+              onEditTask={onEditTask}
+              className="py-8"
+            />
           </SimpleBar>
         </div>
 

@@ -2,8 +2,8 @@ import { Task } from "@/pages/todo-app";
 import { FloatingButton } from "./floating-button";
 import { ProUpgradeCard } from "./pro-upgrade-card";
 import SimpleBar from "./simplebar";
-import { TaskItem } from "./task-item";
 import { UserProfile } from "./user-profile";
+import { TaskList } from "./task-list";
 
 interface SidebarProps {
   tasks: Task[];
@@ -19,16 +19,12 @@ export const Sidebar = ({ tasks, toggleCompleteTask, handleEditTask }: SidebarPr
 
       <div className="">
         <SimpleBar className="flex-grow overflow-y-auto max-h-[calc(100vh-20rem)] mt-3">
-          <div className="py-8 px-4 space-y-4">
-            {tasks.map((task) => (
-              <TaskItem
-                key={task.id}
-                task={task}
-                onToggleComplete={toggleCompleteTask}
-                onEditTask={handleEditTask}
-              />
-            ))}
-          </div>
+          <TaskList
+            tasks={tasks}
+            onToggleComplete={toggleCompleteTask}
+            onEditTask={handleEditTask}
+            className="py-8 px-4"
+          />
         </SimpleBar>
       </div>
       <FloatingButton />
