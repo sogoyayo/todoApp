@@ -297,12 +297,9 @@
     @apply border-4 border-yellow-400;
   }
 
-  .card-shadow {
-    box-shadow:
-      0px 1px 0 rgba(0, 0, 0, 0.02),
-      0px 2px 6px rgba(0, 0, 0, 0.05);
+  .nav-height {
+    @apply h-8
   }
-
 
 }
 
