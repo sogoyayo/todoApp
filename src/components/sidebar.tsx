@@ -17,18 +17,20 @@ export const Sidebar = ({ tasks, toggleCompleteTask, handleEditTask }: SidebarPr
       <UserProfile />
       <ProUpgradeCard />
 
-      <SimpleBar className="flex-grow overflow-y-auto max-h-[calc(100vh-12rem)] mt-3">
-        <div className="py-8 px-4 space-y-4">
-          {tasks.map((task) => (
-            <TaskItem
-              key={task.id}
-              task={task}
-              onToggleComplete={toggleCompleteTask}
-              onEditTask={handleEditTask}
-            />
-          ))}
-        </div>
-      </SimpleBar>
+      <div className="">
+        <SimpleBar className="flex-grow overflow-y-auto max-h-[calc(100vh-20rem)] mt-3">
+          <div className="py-8 px-4 space-y-4">
+            {tasks.map((task) => (
+              <TaskItem
+                key={task.id}
+                task={task}
+                onToggleComplete={toggleCompleteTask}
+                onEditTask={handleEditTask}
+              />
+            ))}
+          </div>
+        </SimpleBar>
+      </div>
       <FloatingButton />
     </div>
   );

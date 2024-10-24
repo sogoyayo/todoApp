@@ -1,6 +1,5 @@
+import { MainContent } from "@/components/main-content";
 import { Sidebar } from "@/components/sidebar";
-import { TaskButtons } from "@/components/task-buttons";
-import { TaskInput } from "@/components/task-input";
 import React, { useState } from "react";
 
 export interface Task {
@@ -11,9 +10,9 @@ export interface Task {
 
 export const TodoApp = () => {
   const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, name: "Training at the Gym", completed: true },
-    { id: 2, name: "Play Paddle with friends", completed: false },
-    { id: 3, name: "Burger BBQ with family", completed: false },
+    { id: Date.now(), name: "Training at the Gym", completed: true },
+    { id: Date.now() + 1, name: "Play Paddle with friends", completed: false },
+    { id: Date.now() + 2, name: "Burger BBQ with family", completed: false },
   ]);
 
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
@@ -40,7 +39,11 @@ export const TodoApp = () => {
           )
         );
       } else {
-        const newTask: Task = { id: tasks.length + 1, name: taskName, completed: false };
+        const newTask: Task = {
+          id: Date.now(),
+          name: taskName,
+          completed: false,
+        };
         setTasks([...tasks, newTask]);
       }
       setSelectedTask(null);
@@ -74,24 +77,16 @@ export const TodoApp = () => {
         handleEditTask={handleEditTask}
       />
 
-      <div className="w-full text-gray-800 flex flex-col h-full">
-        <div className="header-shadow flex items-center justify-between md:justify-center h-44 bg-[#3556AB]">
-          <h2 className="text-shadow__black px-4 md:px-0 text-white text-base md:text-2xl font-medium mb-4">
-            {selectedTask ? "Edit Task" : "Add Task"}
-          </h2>
-        </div>
-
-        <div className="flex flex-col flex-grow py-6 px-6">
-          <TaskInput taskName={taskName} handleTaskUpdate={handleTaskUpdate} />
-
-          <TaskButtons
-            handleDeleteTask={handleDeleteTask}
-            handleSaveTask={handleSaveTask}
-            selectedTask={!!selectedTask}
-            taskNameLength={taskName.length}
-          />
-        </div>
-      </div>
+      <MainContent
+        selectedTask={selectedTask}
+        taskName={taskName}
+        tasks={tasks}
+        onTaskNameChange={handleTaskUpdate}
+        onToggleComplete={toggleCompleteTask}
+        onEditTask={handleEditTask}
+        onSaveTask={handleSaveTask}
+        onDeleteTask={handleDeleteTask}
+      />
     </div>
   );
 };
