@@ -31,17 +31,19 @@ export const TodoApp = () => {
   };
 
   const handleSaveTask = () => {
-    if (taskName.length >= 3) {
+    const trimmedTaskName = taskName.trim();
+
+    if (trimmedTaskName.length >= 3) {
       if (selectedTask) {
         setTasks(
           tasks.map((task) =>
-            task.id === selectedTask.id ? { ...task, name: taskName } : task
+            task.id === selectedTask.id ? { ...task, name: trimmedTaskName } : task
           )
         );
       } else {
         const newTask: Task = {
           id: Date.now(),
-          name: taskName,
+          name: trimmedTaskName,
           completed: false,
         };
         setTasks([...tasks, newTask]);
