@@ -108,7 +108,10 @@ export const TodoApp: React.FC = () => {
         <div className="flex flex-col flex-grow py-6 px-6">
           <div>
             <div className="space-y-3">
-              <label htmlFor="taskName" className="block text-lg font-medium mb-2">
+              <label
+                htmlFor="taskName"
+                className="block text-lg tracking-widest font-light mb-2"
+              >
                 Task Name
               </label>
               <input
