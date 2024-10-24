@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <AppErrorBoundary>
           <Routes>
-            <Route index element={<TodoApp />} />
+            <Route index path="/" element={<TodoApp />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Toaster position="top-center" richColors />
