@@ -2,7 +2,7 @@ import { TrophyIcon } from "./trophy-icon";
 
 export const ProUpgradeCard = () => {
   return (
-    <div className="relative bg-lime-300 px-10 py-12 flex items-center justify-between shadow-lg w-full">
+    <div className="relative border-2 border-[#9EB031] bg-[#CDE53D] px-10 py-12 flex items-center justify-between shadow-lg w-full">
       <div className="flex items-center space-x-4">
         <TrophyIcon />
 

@@ -75,7 +75,7 @@ export const TodoApp: React.FC = () => {
 
   return (
     <div className="flex h-screen w-screen bg-gray-100/70 text-white overflow-hidden">
-      <div className="hidden md:block w-[30rem] min-w-[30rem] flex flex-col relative text-gray-900 h-full">
+      <div className="sidebar-shadow hidden md:block w-[30rem] min-w-[30rem] flex flex-col relative text-gray-900 h-full">
         <UserProfile />
 
         <ProUpgradeCard />
@@ -96,7 +96,7 @@ export const TodoApp: React.FC = () => {
       </div>
 
       <div className="w-full text-gray-800 flex flex-col h-full">
-        <div className="flex items-center justify-between md:justify-center h-44 bg-[#3556AB]">
+        <div className="header-shadow flex items-center justify-between md:justify-center h-44 bg-[#3556AB]">
           <div className="md:hidden">
             <UserProfile />
           </div>
@@ -117,7 +117,7 @@ export const TodoApp: React.FC = () => {
               <input
                 type="text"
                 id="taskName"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-6 py-4 placeholder:text-base"
+                className="bg-gray-50 border-2 border-gray-300 text-gray-900 text-base text-[#0D2972] rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-6 py-4 placeholder:text-base"
                 placeholder="Type in your task"
                 value={taskName}
                 onChange={handleTaskUpdate}
@@ -149,7 +149,7 @@ export const TodoApp: React.FC = () => {
           <div className="flex gap-6 mt-auto">
             <button
               onClick={handleDeleteTask}
-              className={`text-shadow__black border border-[#720D0D] bg-[#AB3535] text-white px-6 py-4 rounded-lg hover:bg-[#AB3535]/95 ${
+              className={`btn-shadow text-shadow__black border-2 border-[#720D0D] bg-[#AB3535] text-white px-6 py-4 rounded-lg hover:bg-[#AB3535]/95 ${
                 selectedTask ? "" : "opacity-50 cursor-not-allowed"
               }`}
               disabled={!selectedTask}
@@ -158,7 +158,7 @@ export const TodoApp: React.FC = () => {
             </button>
             <button
               onClick={handleSaveTask}
-              className={`text-shadow__black border border-[#123EB1] flex-1 bg-[#3556AB] text-white px-6 py-4 rounded-lg hover:bg-[#3556AB]/95 ${
+              className={`btn-shadow text-shadow__black border-2 border-[#123EB1] flex-1 bg-[#3556AB] text-white px-6 py-4 rounded-lg hover:bg-[#3556AB]/95 ${
                 taskName.length >= 3 ? "" : "opacity-50 cursor-not-allowed"
               }`}
               disabled={taskName.length < 3}

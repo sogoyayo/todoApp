@@ -13,13 +13,13 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
       role="button"
       tabIndex={0}
       key={task.id}
-      className="flex items-center justify-between bg-white px-4 py-6 shadow-md rounded-lg w-full cursor-pointer"
+      className="flex items-center justify-between bg-white border border-gray-200 px-4 py-6 shadow-md rounded-lg w-full cursor-pointer"
       onClick={() => onToggleComplete(task)}
     >
       <div className="flex items-center">
         <div
           className={`w-6 h-6 flex items-center justify-center rounded-full mr-4 ${
-            task.completed ? "bg-green-500" : "border-2 border-[#3556AB]"
+            task.completed ? "bg-green-500" : "border-2 border-[#071D55]"
           }`}
         >
           {task.completed && <Check strokeWidth={3} className="w-4 h-4 text-white" />}
@@ -27,7 +27,7 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
 
         <span
           className={`${
-            task.completed ? "line-through text-gray-400" : "text-[#3556AB]"
+            task.completed ? "line-through text-gray-400" : "text-[#071D55]"
           } font-medium`}
         >
           {task.name}
@@ -35,7 +35,7 @@ export const TaskItem = ({ task, onToggleComplete, onEditTask }: TaskItemProps) 
       </div>
 
       <button
-        className={`text-[#3556AB] border border-[#3556AB] rounded px-4 py-2 text-sm hover:bg-[#3556AB]/25 ${
+        className={`text-[#071D55] border border-[#071D55] rounded px-4 py-2 text-sm hover:bg-[#3556AB]/25 ${
           task.completed ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={(e) => {
